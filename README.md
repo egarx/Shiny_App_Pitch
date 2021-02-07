@@ -8,7 +8,7 @@ Github Repository: https://Pitch
 
 Shiny Application: https://Pitch
 
-Ioslide Presentation: http://rpubs
+Ioslide Presentation: https://rpubs.com/egarx/Shiny_App_Pitch
 
 ## Description
 
