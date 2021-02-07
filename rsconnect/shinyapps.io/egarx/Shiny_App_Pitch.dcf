@@ -1,0 +1,12 @@
+name: Shiny_App_Pitch
+title: Shiny_App_Pitch
+username:
+account: egarx
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3596714
+bundleId: 4192648
+url: https://egarx.shinyapps.io/Shiny_App_Pitch/
+when: 1612720398.9021
+asMultiple: FALSE
+asStatic: FALSE
