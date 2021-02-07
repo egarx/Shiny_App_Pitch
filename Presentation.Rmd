@@ -1,0 +1,80 @@
+
+---
+title: "Shiny Application and Reproducible Pitch"
+author: "Emilio Garcia"
+date: "2/04/2021"
+output:
+  ioslides_presentation: default
+  slidy_presentation: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Your Shiny Application
+
+1. Write a shiny application with associated supporting documentation.
+2. Deploy the application on Rstudio's shiny server
+3. Share the application link by pasting it into the provided text box
+4. Share your server.R and ui.R code on github
+5. Some form of input (widget: textbox, radio button, ...)
+6. Some operation on the ui input in sever.R
+7. Some reactive output displayed as a result of server calculations.
+8. The documentation should be at the Shiny website itself.
+
+```{r}
+```
+
+## Data Descriptive
+
+```{r, fig.align='center', message = FALSE}
+
+library(datasets)
+library(caret)
+library(quantmod)
+library(dplyr)
+
+from.dat <- as.Date("01/01/17", format="%m/%d/%y")
+
+to.dat <- as.Date("01/01/21", format="%m/%d/%y")
+
+getSymbols(c("GOOG","AAPL","FB","F","BA", "C"), src="yahoo", from = from.dat, to = to.dat)
+
+GOOG <- GOOG %>% as.data.frame()
+AAPL <- AAPL %>% as.data.frame()
+FB <- FB %>% as.data.frame()
+BA <- BA %>% as.data.frame()
+C <- C %>% as.data.frame()
+  
+fecha <- rownames(FB) 
+  
+stocks <- data.frame(Fecha=fecha[-1],AAPL=diff(log(AAPL$AAPL.Close),1),
+                       GOOG=diff(log(GOOG$GOOG.Close),1),
+                       FB=diff(log(FB$FB.Close),1),
+                       BA=diff(log(BA$BA.Close),1),
+                       C=diff(log(C$C.Close),1))
+
+stocks4corr <- stocks %>% select("AAPL","GOOG","FB","BA","C")
+
+tail(stocks4corr,5)
+```
+
+## Instruction for use
+
+1. Select the sample size of interest
+2. Select the stocks 
+3. The result shows the correlation among the chosen stocks
+
+```{r}
+```
+
+## Stock Correlation Matrix
+
+```{r, fig.align='center', message = FALSE, warning=FALSE}
+
+stocks4corr <- stocks %>% select("AAPL","GOOG","FB","BA","C") 
+
+round(cor(tail(stocks4corr[,c(TRUE,TRUE,TRUE,TRUE,TRUE)],3)),2)
+
+```
