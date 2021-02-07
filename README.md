@@ -4,7 +4,7 @@ This work has two parts:
 i. Shiny application and deploy it on Rstudio's servers
 ii. Slidify or Rstudio Presenter to prepare a reproducible pitch presentation about your application.
 
-Github Repository: https://Pitch
+Github Repository: https://https://github.com/egarx/Shiny_App_Pitch
 
 Shiny Application: https://Pitch
 
