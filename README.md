@@ -6,7 +6,7 @@ ii. Slidify or Rstudio Presenter to prepare a reproducible pitch presentation ab
 
 Github Repository: https://https://github.com/egarx/Shiny_App_Pitch
 
-Shiny Application: https://Pitch
+Shiny Application: https://egarx.shinyapps.io/Shiny_App_Pitch/
 
 Ioslide Presentation: https://rpubs.com/egarx/Shiny_App_Pitch
 
